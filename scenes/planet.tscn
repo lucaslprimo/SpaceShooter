@@ -1,20 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://bn7a2wtk7bslh"]
+[gd_scene load_steps=4 format=3 uid="uid://dnjqlqpdw4dt5"]
 
-[ext_resource type="Texture2D" uid="uid://ce7s1s3q24vpi" path="res://graphics/sprites/monster1.png" id="1_2jfhe"]
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_qh3s6"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_kmn0v"]
+[ext_resource type="Texture2D" uid="uid://b46pdwelag8td" path="res://graphics/sprites/planet1.png" id="2_e6f30"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2e0gk"]
-size = Vector2(20, 36)
+[sub_resource type="CircleShape2D" id="CircleShape2D_wlauw"]
+radius = 38.0132
 
-[node name="Enemy" type="Area2D"]
-script = ExtResource("1_qh3s6")
+[node name="Planet" type="Area2D"]
+script = ExtResource("1_kmn0v")
+speed = 50
+hp = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_2e0gk")
+shape = SubResource("CircleShape2D_wlauw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
-texture = ExtResource("1_2jfhe")
+texture = ExtResource("2_e6f30")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(0, -13)

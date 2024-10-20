@@ -4,7 +4,7 @@ class_name Player extends CharacterBody2D
 
 @export var fire_cd = 0.3
 
-@onready var bulletSpawnPoint = $BulletSpawnPoint
+@onready var bullet_spawn_point = $BulletSpawnPoint
 
 signal shoot_event
 
@@ -29,4 +29,4 @@ func die():
 	queue_free()
 
 func shoot():
-	shoot_event.emit(bullet, bulletSpawnPoint.global_position)
+	shoot_event.emit(bullet, bullet_spawn_point.global_position)
