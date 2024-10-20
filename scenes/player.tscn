@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://6d6rsxpjit8q"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_gtqmf"]
+[ext_resource type="Texture2D" uid="uid://b8lxo8sttfacp" path="res://graphics/sprites/spaceship1.png" id="1_r0lbk"]
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_gtqmf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
+polygon = PackedVector2Array(0, -17, -13, -1, -23, 15, -15, 15, -5, 11, -3, 17, 3, 17, 5, 11, 15, 15, 23, 15, 13, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionPolygon2D"]
+texture = ExtResource("1_r0lbk")
+
+[node name="BulletSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(17, 0)
